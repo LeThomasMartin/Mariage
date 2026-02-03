@@ -35,36 +35,6 @@ a {
   top: 4px; /* micro-ajustement visuel */
 }
 
-a::before,
-a::after {
- content: '';
-  position: absolute;
-  width: 100%;
-  left: 0;
-}
-a::before {
-  background-color: var(--accent-dark);
-  height: 2px;
-  bottom: 0;
-  transform-origin: 100% 50%;
-  transform: scaleX(0);
-  transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
-}
-a::after {
-  content: attr(data-replace);
-  height: 100%;
-  top: 0;
-  transform-origin: 100% 50%;
-  transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
-  color: var(--accent-dark);
-}
-
-a:hover::before {
-  transform-origin: 0% 50%;
-  transform: scaleX(1);
-}
-
-
 .page{
   width:100%;
   max-width:var(--max-width);
@@ -163,12 +133,6 @@ input:focus, select:focus, textarea:focus{
   font-weight:600;
   transition:background-size .35s cubic-bezier(.2,.9,.2,1), color .18s ease, transform .12s ease, box-shadow .12s ease;
 }
-.btn:hover,
-.btn:focus{
-  background-size:100% 100%;
-  color:white;
-}
-.btn:active{transform:translateY(1px) scale(.998)}
 
 /* Ghost variant uses the accent color for the fill */
 .btn.ghost{
@@ -179,19 +143,11 @@ input:focus, select:focus, textarea:focus{
   color:var(--accent-dark);
   border:1px solid var(--accent-dark);
 }
-.btn.ghost:hover,
-.btn.ghost:focus{
-  background-size:100% 100%;
-  color:white;
-  border-color:transparent;
-}
 
-.btn:disabled{opacity:0.6;cursor:not-allowed}
 
 @media (prefers-reduced-motion: reduce){
   .btn, .btn.ghost{transition:none; background-size:100% 100%}
 }
-
 
 /* Message */
 .message{margin-top:12px;padding:12px;border-radius:10px;font-weight:600}
@@ -202,14 +158,6 @@ input:focus, select:focus, textarea:focus{
 /* Info card small tweaks */
 .info-card p{margin:8px 0}
 .info-card hr{border:none;height:1px;background:linear-gradient(90deg, rgba(0,0,0,0.04), rgba(0,0,0,0.02));margin:12px 0}
-
-/* Card hover effect */
-/* Optional: uncomment to enable 
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-}*/
-
 
 
 /*==========Fleure===========*/
@@ -233,7 +181,3 @@ input:focus, select:focus, textarea:focus{
 
 /* Footer */
 .footer{text-align:center;margin-top:16px;color:var(--muted);font-size:0.95rem}
-
-* {
-  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
-}

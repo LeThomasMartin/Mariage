@@ -1,0 +1,63 @@
+
+/*======BoutonsAnimations======*/
+
+.btn:hover,
+.btn:focus{
+  background-size:100% 100%;
+  color:white;
+}
+.btn:active{transform:translateY(1px) scale(.998)}
+
+.btn.ghost:hover,
+.btn.ghost:focus{
+  background-size:100% 100%;
+  color:white;
+  border-color:transparent;
+}
+
+.btn:disabled{opacity:0.6;cursor:not-allowed}
+
+
+
+/*======LinkAnimations======*/
+
+a::before,
+a::after {
+ content: '';
+  position: absolute;
+  width: 100%;
+  left: 0;
+}
+a::before {
+  background-color: var(--accent-dark);
+  height: 2px;
+  bottom: 0;
+  transform-origin: 100% 50%;
+  transform: scaleX(0);
+  transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+}
+a::after {
+  content: attr(data-replace);
+  height: 100%;
+  top: 0;
+  transform-origin: 100% 50%;
+  transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+  color: var(--accent-dark);
+}
+
+a:hover::before {
+  transform-origin: 0% 50%;
+  transform: scaleX(1);
+}
+
+
+/*======CardAnimations======*/
+
+/* Card hover effect */
+/* Optional: uncomment to enable 
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}*/
+
+
