@@ -1,0 +1,242 @@
+:root{
+  --bg: #edddce;
+  --card: #fffaf5;
+  --muted: #6b7280;
+  --accent: #CEDEED;
+  --accent-dark: #88a3bd;
+  --danger: #d9534f;
+  --radius: 12px;
+  --shadow: 0 6px 18px rgba(20,20,30,0.06);
+  --max-width: 1000px;
+  --gap: 18px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color-scheme: light;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background: linear-gradient(180deg, #f7fbf9 0%, var(--bg) 100%);
+  color:#111827;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding:24px;
+  display:flex;
+  justify-content:center;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  position: relative;
+  top: 4px; /* micro-ajustement visuel */
+}
+
+a::before,
+a::after {
+ content: '';
+  position: absolute;
+  width: 100%;
+  left: 0;
+}
+a::before {
+  background-color: var(--accent-dark);
+  height: 2px;
+  bottom: 0;
+  transform-origin: 100% 50%;
+  transform: scaleX(0);
+  transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+}
+a::after {
+  content: attr(data-replace);
+  height: 100%;
+  top: 0;
+  transform-origin: 100% 50%;
+  transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+  color: var(--accent-dark);
+}
+
+a:hover::before {
+  transform-origin: 0% 50%;
+  transform: scaleX(1);
+}
+
+
+.page{
+  width:100%;
+  max-width:var(--max-width);
+}
+
+.hero{
+  text-align:center;
+  margin-bottom:18px;
+}
+
+.hero-inner {
+  width: fit-content;
+  margin: 0 auto;
+}
+.hero::after {
+  content: "";
+  display: block;
+  height: 3px;
+  background: var(--accent);
+  margin: 1.5rem auto 0;
+}
+.couple{
+  font-family: 'Allura', cursive;
+  line-height: 1.1;
+  margin:0;
+  font-size:3.5rem;
+  letter-spacing:0.6px;
+}
+
+.when{
+  margin:6px 0 0;
+  color:var(--muted);
+  font-size:0.95rem;
+}
+
+/* Grid */
+.grid{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap:var(--gap);
+}
+
+@media(min-width:880px){
+  .grid{grid-template-columns: 1fr 360px; align-items:start}
+}
+
+/* Card */
+.card{
+  background:var(--card);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:18px;
+  border: 1px solid rgba(15,23,42,0.04);
+}
+
+.rsvp-card h2, .info-card h2{margin:0 0 12px 0}
+.small{font-size:0.85rem;color:var(--muted)}
+
+/* Form */
+.form{display:flex;flex-direction:column;gap:12px}
+.field{display:flex;flex-direction:column;gap:8px}
+.field span{font-weight:600;font-size:0.95rem}
+input[type="text"], select, textarea{
+  border:1px solid rgba(15,23,42,0.08);
+  border-radius:8px;
+  padding:10px 12px;
+  font-size:0.95rem;
+  background:linear-gradient(180deg,#fff,#fbfdff);
+  outline:none;
+}
+input:focus, select:focus, textarea:focus{
+  box-shadow:0 0 0 4px rgba(107,159,143,0.08);
+  border-color:var(--accent-dark);
+}
+
+/* Radios */
+.radio-group{display:flex;flex-direction:column;gap:8px}
+.radio-group label{display:inline-flex;align-items:center;gap:8px;font-size:0.95rem}
+
+/* Buttons */
+.actions{display:flex;gap:10px;margin-top:6px}
+
+/* Button fill animation: background image scales from 0%→100% to create a left-to-right fill */
+.btn{
+  position:relative;
+  overflow:hidden;
+  background-color:var(--accent);
+  background-image:linear-gradient(90deg, var(--accent-dark) 0%, var(--accent-dark) 100%);
+  background-position:left center;
+  background-size:0% 100%;
+  background-repeat:no-repeat;
+  color:white;
+  border:0;
+  padding:10px 14px;
+  border-radius:100px;
+  cursor:pointer;
+  font-weight:600;
+  transition:background-size .35s cubic-bezier(.2,.9,.2,1), color .18s ease, transform .12s ease, box-shadow .12s ease;
+}
+.btn:hover,
+.btn:focus{
+  background-size:100% 100%;
+  color:white;
+}
+.btn:active{transform:translateY(1px) scale(.998)}
+
+/* Ghost variant uses the accent color for the fill */
+.btn.ghost{
+  background-color:transparent;
+  background-image:linear-gradient(90deg, var(--accent) 0%, var(--accent) 100%);
+  background-size:0% 100%;
+  background-repeat:no-repeat;
+  color:var(--accent-dark);
+  border:1px solid var(--accent-dark);
+}
+.btn.ghost:hover,
+.btn.ghost:focus{
+  background-size:100% 100%;
+  color:white;
+  border-color:transparent;
+}
+
+.btn:disabled{opacity:0.6;cursor:not-allowed}
+
+@media (prefers-reduced-motion: reduce){
+  .btn, .btn.ghost{transition:none; background-size:100% 100%}
+}
+
+
+/* Message */
+.message{margin-top:12px;padding:12px;border-radius:10px;font-weight:600}
+.hidden{display:none}
+.message.success{background:linear-gradient(180deg, rgba(79,128,111,0.08), rgba(79,128,111,0.03)); color:var(--accent-dark)}
+.message.error{background:linear-gradient(180deg, rgba(217,83,79,0.06), rgba(217,83,79,0.02)); color:var(--danger)}
+
+/* Info card small tweaks */
+.info-card p{margin:8px 0}
+.info-card hr{border:none;height:1px;background:linear-gradient(90deg, rgba(0,0,0,0.04), rgba(0,0,0,0.02));margin:12px 0}
+
+/* Card hover effect */
+/* Optional: uncomment to enable 
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}*/
+
+
+
+/*==========Fleure===========*/
+.page {
+  position: relative;
+  overflow: hidden;
+}
+
+.page::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  right: -60px;
+  width: min(45vw, 500px);
+  height: min(45vw, 500px);
+  background: url("images/fleurs.webp") no-repeat center / contain;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+}  
+
+
+/* Footer */
+.footer{text-align:center;margin-top:16px;color:var(--muted);font-size:0.95rem}
+
+* {
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}

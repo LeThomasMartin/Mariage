@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Réservation — Mariage de Victoria & Mathias</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <main class="page">
+
+    <header class="hero">
+      <div class="hero-inner">
+        <h1 class="couple">Victoria & Mathias</h1>
+        <p class="when">Vendredi 22 juillet 2026 — 16:00 — Qqe part sur une ile pas loin de Montreal</p>
+      </div>
+    </header>
+
+    <section class="grid">
+      <article class="card rsvp-card" aria-labelledby="rsvp-title">
+        <h2 id="rsvp-title">Réservation & Choix du repas</h2>
+
+        <form id="rsvpForm" class="form" autocomplete="off">
+          <label class="field">
+            <span>Nom complet</span>
+            <input type="text" id="name" name="name" required />
+          </label>
+
+          <fieldset class="field radio-group" aria-labelledby="attend-label">
+            <legend id="attend-label">Présence</legend>
+            <label><input type="radio" name="presence" value="yes" required> Je serai présent·e</label>
+            <label><input type="radio" name="presence" value="no"> Je ne pourrai pas venir</label>
+          </fieldset>
+
+          <div id="mealSection" class="hidden">
+            <label class="field">
+              <span>Choix du repas</span>
+              <select id="meal" name="meal">
+                <option value="">-- Choisissez --</option>
+                <option value="Caviar et or">Caviar et or</option>
+                <option value="couille en or">couille en or</option>
+                <option value="couille de Mathias">couille de Mathias</option>
+                <option value="saumon fumé pour Thomas">saumon fumé pour Thomas</option>
+                <option value="enfant">enfant</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span>Allergies / besoins spéciaux</span>
+              <textarea id="allergies" name="allergies" rows="3" placeholder="Ex: sans gluten, allergie aux noix..."></textarea>
+            </label>
+          </div>
+
+          <div class="actions">
+            <button type="submit" id="submitBtn" class="btn">Envoyer ma réponse</button>
+            <button type="button" id="resetBtn" class="btn ghost">Réinitialiser</button>
+          </div>
+        </form>
+
+        <div id="message" class="message hidden" role="status" aria-live="polite"></div>
+      </article>
+
+      <aside class="card info-card" aria-labelledby="infos-title">
+        <h2 id="infos-title">Informations</h2>
+        <p><strong>Lieu :</strong> Dans le cul de ta mère</p>
+        <p><strong>Heure :</strong> Cérémonie à 16:00, diner ensuite fin vers ....</p>
+        <p><strong>Un autre truc :</strong> bla bla bla bla bla bla bla bla</p>
+        <h3>Contact</h3>
+        <p>Par couriel : <a href="mailto:mariage@example.com">mariage@example.com</a></p>
+        <p>Par téléphone : <a href="tel:+1234567890">+1 234 567 890</a></p>
+        <hr>
+      </aside>
+    </section>
+
+    <footer class="footer">
+      <p>Merci de bla bla bla bla bla bla bla</p>
+      <p>Créé par <a href="https://CoverPage">CoverPage</a></p>
+  </main>
+</body>
+</html>
