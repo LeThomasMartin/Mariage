@@ -48,7 +48,7 @@
     }
 
     function clearAbsentFields() {
-      absentContainer.innerHTML = '';
+      //absentContainer.innerHTML = '';
     }
 
     function renderAbsentFields(count) {
@@ -206,7 +206,7 @@
       submitBtn.disabled = true;
       showMessage('Merci ! Ta réponse a bien été prise en compte.', 'success');
     });
-
+  
     resetBtn.addEventListener('click', () => {
       form.reset();
       mealSection.classList.add('hidden');
