@@ -4,6 +4,7 @@
     const messageDiv = document.getElementById('message');
     const submitBtn = document.getElementById('submitBtn');
     const resetBtn = document.getElementById('resetBtn');
+    const guestsInput = document.getElementById('guests');
 
     form.addEventListener('change', (e) => {
       const presence = form.elements['presence'].value;
@@ -14,12 +15,22 @@
       }
     });
 
+    /* Pas nécéssaire pour l'instant, champ désactivé
+    if (guestsInput) {
+      guestsInput.addEventListener('input', (e) => {
+        // Keep only digits (prevents letters and other chars)
+        e.target.value = e.target.value.replace(/\D/g, '');
+      });
+    }*/
+
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       // validation simple : si présent, le repas est requis
       const name = form.elements['name'].value.trim();
       const presence = form.elements['presence'].value;
       const meal = form.elements['meal'].value;
+      const guestsValue = parseInt(form.elements['guests'] ? form.elements['guests'].value : '', 10);
+
       if (!name) {
         showMessage('Veuillez indiquer votre nom.', 'error');
         return;
@@ -28,12 +39,17 @@
         showMessage('Merci de choisir un repas.', 'error');
         return;
       }
+      if (presence === 'yes' && (!guestsValue || guestsValue < 1 || guestsValue > 10)) {
+        showMessage("Veuillez indiquer un nombre d'invités valide (1–10).", 'error');
+        return;
+      }
 
       // données prêtes à être envoyées (console pour l'instant)
       const data = {
         name,
         code: form.elements['code'].value.trim(),
         presence,
+        guests: presence === 'yes' ? guestsValue : 0,
         meal: presence === 'yes' ? meal : null,
         allergies: form.elements['allergies'].value.trim(),
         timestamp: new Date().toISOString()
