@@ -29,7 +29,6 @@ body{
 a {
   text-decoration: none;
   color: inherit;
-  overflow: hidden;
   position: relative;
   display: inline-block;
   position: relative;
@@ -151,7 +150,6 @@ input:focus, select:focus, textarea:focus{
 /* Button fill animation: background image scales from 0%→100% to create a left-to-right fill */
 .btn{
   position:relative;
-  overflow:hidden;
   background-color:var(--accent);
   background-image:linear-gradient(90deg, var(--accent-dark) 0%, var(--accent-dark) 100%);
   background-position:left center;
@@ -217,7 +215,6 @@ input:focus, select:focus, textarea:focus{
 /*==========Fleure===========*/
 .page {
   position: relative;
-  overflow: hidden;
 }
 
 .page::before {
