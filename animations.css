@@ -11,7 +11,7 @@
 .btn.ghost:hover,
 .btn.ghost:focus{
   background-size:100% 100%;
-  color:white;
+  color:rgb(78, 78, 78);
   border-color:transparent;
 }
 
