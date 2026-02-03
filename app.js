@@ -48,7 +48,7 @@
     }
 
     function clearAbsentFields() {
-      //absentContainer.innerHTML = '';
+      absentContainer.innerHTML = '';
     }
 
     function renderAbsentFields(count) {
@@ -76,7 +76,7 @@
         mealSection.classList.remove('hidden');
         absentSection.classList.add('hidden');
         if (guestsLabel) guestsLabel.classList.remove('hidden');
-        //if (absentCountInput) absentCountInput.value = '';
+        if (absentCountInput) absentCountInput.value = '';
         clearAbsentFields();
         const guestsValue = parseInt(guestsInput.value || '1', 10);
         renderGuestFields(clampGuests(guestsValue));
