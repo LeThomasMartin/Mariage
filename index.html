@@ -17,7 +17,7 @@
     <header class="hero">
       <div class="hero-inner">
         <h1 class="couple">Victoria & Mathias</h1>
-        <p class="when">Vendredi 22 juillet 2026 — 16:00 — Qqe part sur une ile pas loin de Montreal</p>
+        <p class="when">Samedi 11 juillet 2026 — 16:00 — Qqe part sur une ile pas loin de Montreal</p>
       </div>
     </header>
 
@@ -26,10 +26,11 @@
         <h2 id="rsvp-title">Réservation & Choix du repas</h2>
 
         <form id="rsvpForm" class="form" autocomplete="off">
+          <!-- Nom complet
           <label class="field">
             <span>Nom complet</span>
             <input type="text" id="name" name="name" required />
-          </label>
+          </label>-->
 
           <fieldset class="field radio-group" aria-labelledby="attend-label">
             <legend id="attend-label">Présence</legend>
@@ -38,10 +39,28 @@
           </fieldset>
           
           <!--Nombre d'invités-->
-          <label class="field">
+          <label id="guestsLabel" class="field">
             <span>Nombre d'invités</span>
-            <input type="number" id="guests" name="guests" min="1" max="10" inputmode="numeric" pattern="[0-9]*" placeholder="1" />
+            <input type="number" id="guests" name="guests" min="1" max="8" inputmode="numeric" pattern="[0-9]*" placeholder="Nombre de personnes"/>
           </label>
+
+          <!-- Section pour indiquer les personnes absentes (apparait si 'presence' === 'no') -->
+          <div id="absentSection" class="hidden">
+            <label class="field">
+              <span>Nombre de personnes absentes</span>
+              <input type="number" id="absentCount" name="absentCount" min="1" max="8" inputmode="numeric" pattern="[0-9]*" placeholder="Nombre de personnes absentes" />
+            </label>
+
+            <div id="absentContainer" aria-live="polite"></div>
+
+            <template id="absentTemplate">
+              <div class="absent">
+                <label class="field">
+                  <input type="text" name="absentName" required />
+                </label>
+              </div>
+            </template>
+          </div>
 
           <div id="mealSection" class="hidden">
             <div id="guestsContainer" aria-live="polite"></div>
@@ -49,7 +68,6 @@
             <template id="guestTemplate">
               <div class="guest">
                 <label class="field">
-                  <span>Nom du/de la convive</span>
                   <input type="text" name="guestName" required />
                 </label>
                 <label class="field">
