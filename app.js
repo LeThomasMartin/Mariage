@@ -15,7 +15,7 @@
 
     function clampGuests(n) {
       if (!Number.isFinite(n)) return 1;
-      return Math.min(10, Math.max(1, n));
+      return Math.min(8, Math.max(1, n));
     }
 
     function clearGuestFields() {
@@ -76,7 +76,7 @@
         mealSection.classList.remove('hidden');
         absentSection.classList.add('hidden');
         if (guestsLabel) guestsLabel.classList.remove('hidden');
-        if (absentCountInput) absentCountInput.value = '';
+        //if (absentCountInput) absentCountInput.value = '';
         clearAbsentFields();
         const guestsValue = parseInt(guestsInput.value || '1', 10);
         renderGuestFields(clampGuests(guestsValue));
