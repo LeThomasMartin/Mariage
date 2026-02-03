@@ -36,25 +36,35 @@
             <label><input type="radio" name="presence" value="yes" required> Je serai présent·e</label>
             <label><input type="radio" name="presence" value="no"> Je ne pourrai pas venir</label>
           </fieldset>
+          
+          <!--Nombre d'invités-->
+          <label class="field">
+            <span>Nombre d'invités</span>
+            <input type="number" id="guests" name="guests" min="1" max="10" inputmode="numeric" pattern="[0-9]*" placeholder="1" />
+          </label>
 
           <div id="mealSection" class="hidden">
-            <label class="field">
-              <span>Choix du repas</span>
-              <select id="meal" name="meal">
-                <option value="">-- Choisissez --</option>
-                <option value="Caviar et or">Caviar et or</option>
-                <option value="couille en or">couille en or</option>
-                <option value="couille de Mathias">couille de Mathias</option>
-                <option value="saumon fumé pour Thomas">saumon fumé pour Thomas</option>
-                <option value="enfant">enfant</option>
-              </select>
-            </label>
+            <div id="guestsContainer" aria-live="polite"></div>
 
-            <label class="field">
-              <span>Nombre d'invités</span>
-              <input type="number" id="guests" name="guests" min="1" max="10" inputmode="numeric" pattern="[0-9]*" placeholder="1" />
-            </label>
-            
+            <template id="guestTemplate">
+              <div class="guest">
+                <label class="field">
+                  <span>Nom du/de la convive</span>
+                  <input type="text" name="guestName" required />
+                </label>
+                <label class="field">
+                  <span>Choix du repas</span>
+                  <select name="guestMeal" required>
+                    <option value="">-- Choisissez --</option>
+                    <option value="Caviar et or">Caviar et or</option>
+                    <option value="couille en or">couille en or</option>
+                    <option value="couille de Mathias">couille de Mathias</option>
+                    <option value="saumon fumé pour Thomas">saumon fumé pour Thomas</option>
+                    <option value="enfant">enfant</option>
+                  </select>
+                </label>
+              </div>
+            </template>
 
             <label class="field">
               <span>Allergies / besoins spéciaux</span>
