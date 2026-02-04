@@ -22,8 +22,8 @@ body{
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
   padding:24px;
-  display:flex;
-  justify-content:center;
+  justify-content: center;
+  display: flex;
 }
 
 a {
@@ -180,4 +180,12 @@ input:focus, select:focus, textarea:focus{
 
 
 /* Footer */
-.footer{text-align:center;margin-top:16px;color:var(--muted);font-size:0.95rem}
+.footer{
+  text-align: center;
+  margin-top: 25px;
+  color: var(--muted);
+  font-size: 0.95rem;
+  width: 100%;
+  display: block;
+  padding-bottom: 5px;
+}
