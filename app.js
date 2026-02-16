@@ -12,6 +12,7 @@
     const resetBtn = document.getElementById('resetBtn');
     const guestsInput = document.getElementById('guests');
     const absentCountInput = document.getElementById('absentCount');
+    const presenceInputs = document.getElementById('presence');
 
     function clampGuests(n) {
       if (!Number.isFinite(n)) return 1;
@@ -22,6 +23,8 @@
       guestsContainer.innerHTML = '';
     }
 
+
+    /*  Génère les champs pour les convives selon le nombre indiqué */
     function renderGuestFields(count) {
       clearGuestFields();
       if (!count || count < 1) return;
@@ -38,7 +41,7 @@
         // set ids and labels for accessibility
         const nameId = `guestName-${i}`;
         const mealId = `guestMeal-${i}`;
-        nameInput.id = nameId;
+        nameInput.id = nameId
         nameInput.placeholder = `Convive ${i}`;
         mealSelect.id = mealId;
         mealLabel.textContent = `Choix du repas pour le convive ${i}`;
@@ -50,7 +53,7 @@
     function clearAbsentFields() {
       absentContainer.innerHTML = '';
     }
-
+  /*  Génère les champs pour les convives selon le nombre indiqué */
     function renderAbsentFields(count) {
       clearAbsentFields();
       if (!count || count < 1) return;
@@ -70,7 +73,7 @@
     }
 
     // Show/hide meal/absent section on presence change
-    form.addEventListener('change', (e) => {
+    presenceInputs.addEventListener('change', (e) => {
       const presence = form.elements['presence'].value;
       if (presence === 'yes') {
         mealSection.classList.remove('hidden');

@@ -32,7 +32,7 @@
             <input type="text" id="name" name="name" required />
           </label>-->
 
-          <fieldset class="field radio-group" aria-labelledby="attend-label">
+          <fieldset id="presence" class="field radio-group" aria-labelledby="attend-label">
             <legend id="attend-label">Présence</legend>
             <label><input type="radio" name="presence" value="yes" required> Je serai présent·e</label>
             <label><input type="radio" name="presence" value="no"> Je ne pourrai pas venir</label>
@@ -56,7 +56,7 @@
             <template id="absentTemplate">
               <div class="absent">
                 <label class="field">
-                  <input type="text" name="absentName" required />
+                  <input type="text" name="absentName"/>
                 </label>
               </div>
             </template>
