@@ -237,6 +237,17 @@ input:focus, select:focus, textarea:focus{
 
 /* ========FAQ======== */
 
-.FAQ {
+.faq-list {
     width: 100%;
+    background:var(--card);
+    border-radius: var(--radius);
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-bottom: 1.5rem;
+    box-shadow:var(--shadow);
+}
+
+.faq-list h2 {
+
+    text-align: center;
 }
