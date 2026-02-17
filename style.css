@@ -233,3 +233,10 @@ input:focus, select:focus, textarea:focus{
     height: auto;
     border-radius:var(--radius);
 }
+
+
+/* ========FAQ======== */
+
+.FAQ {
+    width: 100%;
+}
