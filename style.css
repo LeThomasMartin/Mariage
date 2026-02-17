@@ -18,6 +18,10 @@ html,body{height:100%}
 body{
   margin:0;
   background: linear-gradient(180deg, #f7fbf9 0%, var(--bg) 100%);
+
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
   color:#111827;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
