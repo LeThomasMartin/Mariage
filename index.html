@@ -26,7 +26,9 @@
       <article class="card rsvp-card" aria-labelledby="rsvp-title">
         <h2 id="rsvp-title">Réservation & Choix du repas</h2>
 
-        <form id="rsvpForm" class="form" autocomplete="off">
+
+  <!-- Form Section -->
+        <form id="rsvpForm" class="form" autocomplete="off" action="https://docs.google.com/forms/d/e/1FAIpQLSdjhnGTGbdu9E8SmSiHMgXRBNgPV9kfn2DqsUo_tfhJqrDkJg/formResponse">
 
           <fieldset id="presence" class="field radio-group" aria-labelledby="attend-label">
             <legend id="attend-label">Présence</legend>
@@ -37,7 +39,7 @@
           <!--Nombre d'invités-->
           <label id="guestsLabel" class="field">
             <span>Nombre d'invités</span>
-            <input type="number" id="guests" name="guests" min="1" max="8" inputmode="numeric" pattern="[0-9]*" placeholder="Nombre de personnes"/>
+            <input type="number" id="guests" name="entry.924350136" min="1" max="8" inputmode="numeric" pattern="[0-9]*" placeholder="Nombre de personnes"/>
           </label>
 
           <!-- Section pour indiquer les personnes absentes (apparait si 'presence' === 'no') -->
