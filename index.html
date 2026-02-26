@@ -17,7 +17,8 @@
     <header class="hero">
       <div class="hero-inner">
         <h1 class="couple">Victoria & Mathias</h1>
-        <p class="when">Samedi 11 juillet 2026 — 16:00 — Qqe part sur une ile pas loin de Montreal</p>
+        <p class="when">Samedi 11 juillet 2026 — 14:00 — Parc historique de la Pointe-du-Moulin, 2500 boulevard Don Quichotte, Notre Dame-de-l'île-Perrot</p>
+        <p class="when"> Veuillez réserver vos places avant le 1er juin 2026</p>
       </div>
     </header>
 
@@ -26,15 +27,10 @@
         <h2 id="rsvp-title">Réservation & Choix du repas</h2>
 
         <form id="rsvpForm" class="form" autocomplete="off">
-          <!-- Nom complet
-          <label class="field">
-            <span>Nom complet</span>
-            <input type="text" id="name" name="name" required />
-          </label>-->
 
           <fieldset id="presence" class="field radio-group" aria-labelledby="attend-label">
             <legend id="attend-label">Présence</legend>
-            <label><input type="radio" name="presence" value="yes" required> Je serai présent·e</label>
+            <label><input type="radio" name="presence" value="yes" required> Je serai présent</label>
             <label><input type="radio" name="presence" value="no"> Je ne pourrai pas venir</label>
           </fieldset>
           
@@ -61,7 +57,8 @@
               </div>
             </template>
           </div>
-
+          
+          <!--Section pour les choix de repas-->
           <div id="mealSection" class="hidden">
             <div id="guestsContainer" aria-live="polite"></div>
 
@@ -75,11 +72,8 @@
                   <span>Choix du repas</span>
                   <select name="guestMeal" required>
                     <option value="">-- Choisissez --</option>
-                    <option value="Caviar et or">Caviar et or</option>
-                    <option value="couille en or">couille en or</option>
-                    <option value="couille de Mathias">couille de Mathias</option>
-                    <option value="saumon fumé pour Thomas">saumon fumé pour Thomas</option>
-                    <option value="enfant">enfant</option>
+                    <option value="Porc à la basque avec penne rigate">Porc à la basque avec penne rigate</option>
+                    <option value="Poulet à l'érable et à la sauge avec pomme de terre">Poulet à l'érable et à la sauge avec pomme de terre</option>
                   </select>
                 </label>
               </div>
@@ -100,14 +94,15 @@
         <div id="message" class="message hidden" role="status" aria-live="polite"></div>
       </article>
 
+      <!--Informations-->
       <aside class="card info-card" aria-labelledby="infos-title">
         <h2 id="infos-title">Informations</h2>
-        <p><strong>Lieu :</strong> Non mais c juste une blague en vrai. Déso 😶</p>
-        <p><strong>Heure :</strong> Cérémonie à 16:00, diner ensuite fin vers ....</p>
+        <p><strong>Lieu :</strong> 2500 boulevard Don Quichotte, Notre-Dame-de-l'Île-Perrot</p>
+        <p><strong>Heure :</strong> Arrivé à 14h00, cérémonie à 15h00 et diner à 18h</p>
         <p><strong>Un autre truc :</strong> bla bla bla bla bla bla bla bla</p>
-        <h3>Contact</h3>
-        <p>Par couriel : <a href="mailto:mariage@example.com">mariage@example.com</a></p>
-        <p>Par téléphone : <a href="tel:+1234567890">+1 234 567 890</a></p>
+        <h3>Contact pour toutes questions</h3>
+        <p>Par couriel : <a href="mailto:mathiasdesruisseaux2005@gmail.com">mathiasdesruisseaux2005@gmail.com</a></p>
+        <p>Par téléphone : <a href="tel:+14505125392">1 450-512-5392</a></p>
         <hr>
       </aside>
 
@@ -157,7 +152,7 @@
     </article>
 
   <footer class="footer">
-    <p>Merci de bla bla bla bla bla bla bla</p>
+    <p>Au plaisir de vous compter parmis nous</p>
     <p>Créé par <a href="https://CoverPage">CoverPage</a></p>
   </footer>
 
