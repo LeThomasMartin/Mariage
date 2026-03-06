@@ -74,8 +74,8 @@
 
     // Show/hide meal/absent section on presence change
     presenceInputs.addEventListener('change', (e) => {
-      const presence = form.elements['presence'].value;
-      if (presence === 'yes') {
+      const presence = form.elements['entry.1233920643'].value;
+      if (presence === 'Présent') {
         mealSection.classList.remove('hidden');
         absentSection.classList.add('hidden');
         if (guestsLabel) guestsLabel.classList.remove('hidden');
@@ -96,7 +96,7 @@
     // Update fields when number of guests changes
     guestsInput.addEventListener('input', (e) => {
       const value = parseInt(e.target.value, 10);
-      if (form.elements['presence'] && form.elements['presence'].value === 'yes') {
+      if (form.elements['entry.1233920643'] && form.elements['entry.1233920643'].value === 'Présent') {
         if (!Number.isFinite(value) || value < 1) {
           clearGuestFields();
           return;
@@ -109,7 +109,7 @@
     if (absentCountInput) {
       absentCountInput.addEventListener('input', (e) => {
         const value = parseInt(e.target.value, 10);
-        if (form.elements['presence'] && form.elements['presence'].value === 'no') {
+        if (form.elements['entry.1233920643'] && form.elements['entry.1233920643'].value === 'Absent') {
           if (!Number.isFinite(value) || value < 1) {
             clearAbsentFields();
             return;
@@ -123,7 +123,7 @@
       e.preventDefault();
 
       const name = form.elements['name'].value.trim();
-      const presence = form.elements['presence'].value;
+      const presence = form.elements['entry.1233920643'].value;
       const guestsValue = parseInt(form.elements['guests'] ? form.elements['guests'].value : '', 10);
 
       if (!name) {
@@ -131,7 +131,7 @@
         return;
       }
 
-      if (presence === 'yes') {
+      if (presence === 'Présent') {
         if (!guestsValue || guestsValue < 1 || guestsValue > 8) {
           showMessage("Veuillez indiquer un nombre d'invités valide (1–8).", 'error');
           return;
@@ -204,10 +204,6 @@
         };
         console.log('Données RSVP (absents):', data);
       }
-
-      // Simuler succès
-      submitBtn.disabled = true;
-      showMessage('Merci ! Ta réponse a bien été prise en compte.', 'success');
     });
   
     resetBtn.addEventListener('click', () => {
