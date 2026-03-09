@@ -161,7 +161,7 @@ input:focus, select:focus, textarea:focus{
 /* ====Message==== */
 .message{margin-top:12px;padding:12px;border-radius:10px;font-weight:600}
 .hidden{display:none}
-.message.success{background:linear-gradient(180deg, rgba(79,128,111,0.08), rgba(79,128,111,0.03)); color:var(--accent-dark)}
+.message.success{background:linear-gradient(180deg, rgba(79,128,111,0.08), rgba(79,128,111,0.03)); color:var(#3c5a75)}
 .message.error{background:linear-gradient(180deg, rgba(217,83,79,0.06), rgba(217,83,79,0.02)); color:var(--danger)}
 
 /* Info card small tweaks */

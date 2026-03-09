@@ -64,12 +64,25 @@ a:hover::before {
 
 /*==========Fireworks===========*/
 
+.firework {
+  display: none;
+}
+
 @keyframes firework {
   0% { transform: translate(var(--x), var(--initialY)); width: var(--initialSize); opacity: 1; }
   50% { width: 0.5vmin; opacity: 1; }
   100% { width: var(--finalSize); opacity: 0; }
 }
 
+.firework.active,
+.firework.active::before,
+.firework.active::after {
+  animation: firework 2s;
+}
+
+.firework.active {
+  display: block;
+}
 
 .firework,
 .firework::before,
@@ -88,7 +101,7 @@ a:hover::before {
   --x: -50%;
   --initialY: 60vmin;
   content: "";
-  animation: firework 2s infinite;
+  animation: none;
   position: absolute;
   top: 50%;
   left: 50%;

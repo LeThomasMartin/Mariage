@@ -45,7 +45,7 @@
       'entry.1178658106'  // Absent 8
     ];
 
-    // limit number of guest/absent fields to 1..8 (matches available meal entries)
+    // limit number of guest/absent fields to 1..8 (matches form entries)
     function clampGuests(n) {
       if (!Number.isFinite(n)) return 1;
       return Math.min(8, Math.max(1, n));
@@ -233,8 +233,43 @@
 
       if (!isValid) {
         e.preventDefault(); // Prevent submission if validation failed
+      } else {
+        // Valid: submit via fetch to avoid redirection
+        e.preventDefault();
+        submitBtn.disabled = true;
+        const formData = new FormData(form);
+        fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          mode: 'no-cors' // To handle CORS
+        })
+        .then(() => {
+          // Success: show message and trigger fireworks
+          showMessage('Votre réponse a été envoyée avec succès !', 'success');
+          // Trigger fireworks animation
+          document.querySelectorAll(".firework").forEach(f => {
+
+              // reset animation
+              f.classList.remove("active");
+
+              // force reflow (important)
+              void f.offsetWidth;
+
+              // relance animation
+              f.classList.add("active");
+
+  f.addEventListener("animationend", () => {
+    f.classList.remove("active");
+  });});
+        })
+        .catch((error) => {
+          console.error('Erreur lors de l\'envoi:', error);
+          showMessage('Erreur lors de l\'envoi. Veuillez réessayer.', 'error');
+        })
+        .finally(() => {
+          submitBtn.disabled = false;
+        });
       }
-      // If valid, let the form submit naturally to Google Forms
     });
   
     resetBtn.addEventListener('click', () => {

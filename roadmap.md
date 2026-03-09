@@ -4,8 +4,8 @@
 4.  ~~Ajouter la FAQ~~
 5.  ~~Corriger les textes~~
 6.  ~~Faire le google form~~
-7.  Link google form
-8.  Set up la réceptions des données dans sheet
+7.  ~~Link google form~~
+8.  ~~Set up la réceptions des données dans sheet~~
 9.  Pollisage
 10. tester en masse
 
