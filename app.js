@@ -258,9 +258,10 @@
               // relance animation
               f.classList.add("active");
 
-  f.addEventListener("animationend", () => {
-    f.classList.remove("active");
-  });});
+              f.addEventListener("animationend", () => {
+                f.classList.remove("active");
+              });
+      });
         })
         .catch((error) => {
           console.error('Erreur lors de l\'envoi:', error);
