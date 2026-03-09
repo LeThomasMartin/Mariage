@@ -23,6 +23,7 @@ entry.1423852104=Nom5
 entry.2049663739=Nom6
 entry.551807984=Nom7
 entry.1413971020=Nom8
+entry.368554549=Précision sue le repas
 entry.1839507603=Porc+%C3%A0+la+basque+avec+penne+rigate
 entry.1484018748=Poulet+%C3%A0+l'%C3%A9rable+et+%C3%A0+la+sauge+avec+pomme+de+terre
 entry.600979784=Porc+%C3%A0+la+basque+avec+penne+rigate
@@ -39,8 +40,6 @@ entry.760026792=Absent+5
 entry.476411903=Absent+6
 entry.275301949=Absent+7
 entry.1178658106=Absent+8
-
-
 
 
 

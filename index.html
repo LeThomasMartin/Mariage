@@ -17,7 +17,7 @@
     <header class="hero">
       <div class="hero-inner">
         <h1 class="couple">Victoria & Mathias</h1>
-        <p class="when">Samedi 11 juillet 2026 — 14:00 — Parc historique de la Pointe-du-Moulin, 2500 boulevard Don Quichotte, Notre Dame-de-l'île-Perrot</p>
+        <p class="when">Samedi 11 juillet 2026 — 14:00 — <br> Parc historique de la Pointe-du-Moulin, <br> 2500 boulevard Don Quichotte, <br> Notre Dame-de-l'île-Perrot</p>
         <p class="when"> Veuillez réserver vos places avant le 1er juin 2026</p>
       </div>
     </header>
@@ -28,7 +28,7 @@
 
 
   <!-- Form Section -->
-        <form id="rsvpForm" class="form" autocomplete="off" action="https://docs.google.com/forms/d/e/1FAIpQLSdjhnGTGbdu9E8SmSiHMgXRBNgPV9kfn2DqsUo_tfhJqrDkJg/formResponse">
+        <form id="rsvpForm" class="form" autocomplete="off" method="POST" action="https://docs.google.com/forms/d/e/1FAIpQLSdjhnGTGbdu9E8SmSiHMgXRBNgPV9kfn2DqsUo_tfhJqrDkJg/formResponse">
 
           <fieldset id="presence" class="field radio-group" aria-labelledby="attend-label">
             <legend id="attend-label">Présence</legend>
@@ -46,7 +46,7 @@
           <div id="absentSection" class="hidden">
             <label class="field">
               <span>Nombre de personnes absentes</span>
-              <input type="number" id="absentCount" name="absentCount" min="1" max="8" inputmode="numeric" pattern="[0-]*" placeholder="Nombre de personnes absentes" />
+              <input type="number" id="absentCount" name="absentCount" min="1" max="8" inputmode="numeric" pattern="[0-9]*" placeholder="Nombre de personnes absentes" />
             </label>
 
             <div id="absentContainer" aria-live="polite"></div>
@@ -83,7 +83,7 @@
 
             <label class="field">
               <span>Allergies / besoins spéciaux</span>
-              <textarea id="allergies" name="allergies" rows="3" placeholder="Ex: sans gluten, allergie aux noix..."></textarea>
+              <textarea id="allergies" name="entry.368554549" rows="3" placeholder="Ex: sans gluten, allergie aux noix..."></textarea>
             </label>
           </div>
 
