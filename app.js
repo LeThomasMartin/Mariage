@@ -29,9 +29,13 @@
     // Google Form entry IDs for each guest's meal question (still four questions)
     const mealEntries = [
       'entry.1839507603', // Guest 1 meal
-      'entry.600979784',  // Guest 2 meal
-      'entry.370169106',  // Guest 3 meal
-      'entry.476178583'   // Guest 4 meal
+      'entry.1484018748', // Guest 2 meal
+      'entry.600979784',  // Guest 3 meal
+      'entry.1845301717', // Gest 4 meal
+      'entry.370169106',  // Guest 5 meal
+      'entry.708600703',
+      'entry.476178583',   // Guest 5 meal
+      'entry.571572075'
     ];
 
     const absentEntries = [
